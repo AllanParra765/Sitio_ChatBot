@@ -1,5 +1,6 @@
 .fondo_Principal{
-  background-image: url("https://2.bp.blogspot.com/-LgTmd2dDWB4/WR37XjnwkDI/AAAAAAAAGC0/HCAVcq-5Tm4HYpr7NvSPh3POkPoqpjkQACK4B/s1600/paisajes-hermosas-imagenes-angeles-1.jpg");
+  background-image: url("../img/FondoV3.png");
  background-color: #cccccc;
- 
+ background-repeat: no-repeat; /* Do not repeat the image */
+ background-size: cover;
 }
