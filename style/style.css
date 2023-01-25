@@ -1,0 +1,139 @@
+.fondo_principal{
+    background-image: url("../img/Fondo.png");/* ../img/pruebamarca.gif movil */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+.imgLogo{
+  width: 3rem; 
+  height: 3rem;
+}
+
+footer{
+  background-color: black;
+  color: white;
+}
+
+.navbar.navbar-expand-lg.bg-body-tertiary.fixed-top {
+    background: transparent !important;
+  }
+
+  ul a {
+    color: #38fff3 !important;
+    font-size: x-large;
+  }
+
+  .btn {
+    border-radius: 50px;
+    color: #ffcc04;
+    background-color: black !important;
+    border-color: #ffcc04 !important;
+  }
+  .btn:hover {
+    color: white;
+    background-color: #ffcc04 !important;
+    border-color: white !important;
+  }
+
+  .card {
+    background: transparent !important;
+    border-color: #ffcc04;
+  }
+  .card-title {
+    color: #ffcc04!important;
+    font-size: x-large;
+}
+
+ .card-body {
+    color: white;
+    font-size: x-large;
+ }
+ .centrar_carrousel {
+    margin: auto !important;
+  }
+
+.colorServicios{
+    color: #38fff3!important;
+    font-size: x-large;
+}
+
+
+.row.mx-md-5.my-md-5 li {
+    background: transparent;
+    color: #ffcc04;
+    border: aliceblue;
+  }
+
+  @media (max-width: 900px) {
+
+    .fondo_principal{
+        background-image: url("../img/pruebamarca.gif");/* ../img/pruebamarca.gif movil */
+        background-attachment:fixed;
+       /* Do not repeat the image */
+        background-size: initial;
+       background-position: 25%;
+    }
+
+
+    .centrar_carrousel {
+        margin-left: 4vh !important;
+      }
+
+    .row img {
+  
+        width: 12rem;
+      }
+
+
+      .navbar-toggler {
+        padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+        font-size: var(--bs-navbar-toggler-font-size);
+        line-height: 1;
+        color: var(--bs-navbar-color);
+        background-color: #ffcc04;
+        border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+        border-radius: var(--bs-navbar-toggler-border-radius);
+        transition: var(--bs-navbar-toggler-transition);
+      }
+
+      .offcanvas-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
+        background: black !important;
+        opacity: 0.9;
+        color: white;
+      }
+      .offcanvas-body {
+        background: black;
+      }
+
+      .btn-close {
+   
+        background: white var(--bs-btn-close-bg) center/1em auto no-repeat;
+
+      }
+
+      .offcanvas-body {
+        font-size: xx-large;
+      }
+
+      .card-text {
+        color: white;
+        font-size: x-large;
+      }
+h2{
+  font-size: xx-large !important;
+}
+h5{
+  font-size: x-large;
+}
+
+.terminosycondiciones{
+  color: white !important;
+  font-size: x-large !important;
+  
+}
+
+}

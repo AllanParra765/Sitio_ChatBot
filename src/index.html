@@ -2,58 +2,265 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../src/style.css">
-  <script src="main.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChatBot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style/style.css" />
 </head>
 
-<body class="p-4 fondo_Principal">
-
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-              </ul>
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+<body class="fondo_principal fondo_principalmovil">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top px-md-5">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="img/MBOT5.png" alt="MBOT" width="130" height="80"  />
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" data-message="Esto es del primer botón" >
+                            <span class="navbar-toggler-icon" role="Botón que abre el menú"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                            aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                   Menú
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#chatbot">Qué es chatbot?</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#servicios">Gama de Servicios</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#beneficios">Beneficios de MBOT</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                            data-bs-target="#staticBackdrop2" aria-controls="staticBackdrop2">
+                                            Me gustaría conactarlos
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!--Menú para ir a formulario-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1"
+                                id="staticBackdrop2" aria-labelledby="staticBackdropLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="staticBackdropLabel">
+                                      Formulario de Contacto
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <form action="correo.php" method="post">
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" id="exampleInputPassword1" name="nombre" placeholder="Nombre" required>
+                                          </div>
+                                          <div class="mb-3">
+                                            <input type="tel" class="form-control" id="exampleInputPassword1" name="telefono" placeholder="Teléfono" required>
+                                          </div>
+                                        <div class="mb-3">
+                                          <input type="email" class="form-control" placeholder="Correo" name="correo" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <textarea class="form-control" placeholder="Comentarios" name="comentarios" id="floatingTextarea2" style="height: 100px" required></textarea>
+                                          </div>
+                                        <div class="form-check">
+                                          <input type="checkbox" class="form-check-input" id="exampleCheck1" required>                                          
+                                          <label class="form-check-label terminosycondiciones" for="exampleCheck1" >Aceptar terminos y Condiciones</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Enviar Información</button>
+                                      </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </nav>
-      </div>
+        </div>
+        <!--Apartado de qué es un chatbot-->
+        <div class="row mt-5 mx-md-5" id="chatbot">
+            <div class="col-md-12 col-lg-6 mt-5">
+                <div class="card mt-5 p-md-4">
+                    <div class="card-body">
+                        <h2 class="card-title">¿Qué es un chatbot?</h2>
+                        <p class="card-text text-start">En pocas palabras un asistente que se mantiene en comunicación 24/7
+                            con los contactos a través de mensajes de texto en donde se requiere
+                            Sitio web, redes sociales (Facebook, Instagram, Whattssap, etc).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--Informacion de Servicios-->
+<div class="row" id="servicios">
+    <div class="col mx-5 mt-5">
+        <h2 class="colorServicios">Servicios de un Chatbot</h2>
     </div>
-  </div>
+</div>
+        <div class="row">
+            <div class="col-md-11 col-lg-6 mx-md-5 mt-md-5">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="card m-3 p-3">
+                                        <img src="img/almacenamiento-en-la-nube.png" class="rounded m-auto d-block w-75" alt="...">
+                                        <div class="card-body">
 
+                                            <p class="card-text text-center">Almacenar Información</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="card m-3 p-3">
+                                        <img src="img/atencion_personalizada.png" class="rounded m-auto d-block w-75" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text text-center">Atención Personalizada</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="card m-3 p-3">
+                                        <img src="img/servicios.png" class="rounded m-auto d-block w-75" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text text-center">Servicio Disponible 24/7</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="card m-3 p-3">
+                                        <img src="img/automatizacion.png" class="rounded m-auto d-block w-75" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text text-center">Integrar más funcionalidades</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="card m-3 p-3">
+                                        <img src="img/reportes.png" class="rounded m-auto d-block w-75" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text text-center">Genera reportes de desiciones</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="card m-3 p-3">
+                                        <img src="img/redes-sociales.png" class="rounded m-auto d-block w-75" alt="...">
+                                        <div class="card-body">
+
+                                            <p class="card-text text-center">Genera más Ventas o Conversiones</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+<!--Informacion de Beneficios-->
+<div class="row mx-md-5 mt-md-5" id="beneficios">
+    <div class="col-md-12 col-lg-7">
+        <h2 class="card-title">Beneficios de un Chatbot</h2>
+        <br>
+        <h4 class="card-body">Al implemenar MBOT tendras los beneficios de un Chatbot y adicionalmente:</h4>
+    </div>
+</div>
+<div class="row mx-md-5 my-md-5">
+    <div class="col-md-12 col-lg-3 ">
+        <ol class="list-group">
+            <li class="list-group-item"><h5>1. Ahorro de tiempo.</h5></li>        
+            <li class="list-group-item"><h5>2. Funcionalidades a la medida.</h5></li>
+            <li class="list-group-item"><h5>3. Incremento de la reputación de marca.</h5></li>
+            <li class="list-group-item"><h5>4. Soporte Tecnico.</h5></li>
+          </ol>
+    </div>
+    <div class="col-md-12 col-lg-6">
+        <ol class="list-group">
+            <li class="list-group-item"><h5>5. Costo eficiente.</h5></li>
+            <li class="list-group-item"><h5>6. Evitar experiencias negativas.</h5></li>
+            <li class="list-group-item"><h5>7. Solucionar tareas especificas.</h5></li>
+            <li class="list-group-item"><h5>8. Acaparar mayor mercado.</h5></li>
+          </ol>
+    </div>
+</div>
+<div class="row  mx-5 my-5">
+    <div class="col-sm-12 col-md-6">
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary"data-bs-toggle="offcanvas"
+            data-bs-target="#staticBackdrop2" aria-controls="staticBackdrop2">Me gustaría más Información</button>
+          </div>
+    </div>
+</div>
+
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row mx-md-5 p-2">
+            <div class="col ">
+                <h6> Desarrollado por Patito</h6>
+            </div>
+        </div>
+    </div>
+   
+</footer>
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
 </body>
+
 
 </html>
