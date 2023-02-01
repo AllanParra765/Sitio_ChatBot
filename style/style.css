@@ -5,6 +5,7 @@
   --titulos_secundarios:#38fff3;
   --textos_fondos_titulos_botones:#ffcc04;
   --fondo_principal: url("../img/Fondo.png");
+  --fondo_principal_Movil:  url("../img/pruebamarca.gif");
   
 }
 
@@ -77,7 +78,7 @@ footer{
   @media (max-width: 900px) {
 
     .fondo_principal{
-        background-image: url("../img/pruebamarca.gif");/* ../img/pruebamarca.gif movil */
+        background-image:var(--fondo_principal_Movil);/* ../img/pruebamarca.gif movil */
         background-attachment:fixed;
        /* Do not repeat the image */
         background-size: initial;
